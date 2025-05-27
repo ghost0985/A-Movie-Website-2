@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Home from "./components/Home";
+import MovieSearch from "./components/MovieSearch";
+import MovieDetail from "./components/MovieDetail";
 
-function App() {
+export default function App() {
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/search" element={<MovieSearch />} />
+      <Route
+        path="/movie/:id"
+        element={<MovieDetail />}
+      />
+    </Routes>
   );
 }
-
-export default App;
