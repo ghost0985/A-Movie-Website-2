@@ -25,7 +25,7 @@ function Home() {
   return (
     <div className="home-page">
       <div className="home-header">
-        <h1>Welcome to Movie Gallery 🎥</h1>
+        <h1>Welcome to Movie<span className="color">Gallery.</span> 🎥</h1>
         <p>Type a movie name and hit enter</p>
         <input
           className="home-search-box"
